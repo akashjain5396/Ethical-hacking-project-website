@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hackthisite</title>
+</head>
+<style>
+dt {
+	width:200px;
+	background-color:rgb(128,0,0);
+	padding:30px;
+	font-size:50px;
+	color:white;
+	margin-bottom:20px;
+}
+div{
+	background-color:rgb(8,0,0);color:white;font-size:80px;text-align:center;height:200px;vertical-align:middle;
+}
+dd{
+	font-size:100px;
+	color:black;
+}
+</style>
+<body>
+<div>
+CHALLENGES
+</div>
+<br>
+<br>
+<span style="background-color:black;color:white;font-size:50px;">
+HTS BASIC MISSIONS
+</span>
+<br>
+<dl>
+<dt>
+LEVEL-1
+<dd>
+ Password can be given in comment. 
+</dd>
+</dt>
+<dt>
+LEVEL-2
+<dd>
+ Password was placed in a file but the file itself wasnt uploaded so there’s nothing to compare so any password will suffice.
+</dd>
+</dl>
+<dt>
+LEVEL-3
+<dd>
+This time the file was enclosed but it was not encrypted, so anyone could see the file by going to the link.
+</dd>
+</dt>
+<dt>
+LEVEL-4
+<dd>
+This time password would be sent to an email address. Just edit the code by placing your own email address. In this way we will get the password.
+</dd>
+</dt>
+<dt>
+LEVEL-5
+<dd>
+Not solved yet.
+</dd>
+</dt>
+<dt>
+LEVEL-6
+<dd>
+ Password is encrypted. Encrypted password is known.  Encryption system can be accessed. So by giving some random strings as input to the encryption system and analysing the output(encrypted strings). We can decrypt the password.
+</dd>
+</dt>
+</dl>
+<br>
+<span style="background-color:black;color:white;font-size:50px;">
+HTS JAVASCRIPT MISSIONS
+</span>
+<dl>
+<dt>
+LEVEL-1
+<dd>
+ A javascript function is called when an onclick event is executed. Looking at the code of the function gives us the password.
+</dd>
+</dt>
+<dt>
+LEVEL-2
+<dd>
+ We just need to disable javascript from the browser.
+Go to settings->advanced settings->content settings->scroll and click on disable javascript from my browser.
+</dd>
+</dt>
+<dt>
+LEVEL-3
+<dd>
+ A javascript code is given in which if the length of password is equal to a variable (defined in the code above) then we win. So just enter any password equal to the length and we win.
+</dd>
+</dt>
+<dt>
+LEVEL-4
+<dd>
+ A javascript function is called when the onclick event is executed. Analysing the function gives us the password.
+</dd>
+</dt>
+<dt>
+LEVEL-5
+<dd>
+Password is encrypted using unescape function of javascript. See how unescape function encrypts a string and then we get the password.
+</dd>
+</dt>
+<dt>
+LEVEL-6
+<dd>
+ In this challenge a function is called when an onclick event is executed.
+But the function is not present directly in the source code. Rather it is taken from another file which is attached to the source code in script tag. Open that file and see the code of the function. Analysing the function gives us the password.
+</dd>
+</dt>
+</dl>
+<span style="background-color:black;color:white;font-size:50px;">
+OVERTHEWIRE NATAS
+</span>
+<dl>
+<dt>
+LEVEL-1
+<dd>
+password found in comment.
+</dd>
+</dt>
+<dt>
+LEVEL-2
+<dd>
+go to the file directory. There we find the password.
+Things learned - Directory browsing vulnerablity.
+Key points- due to misconfiguration in the web server, some of the directories attached to the server can be listed by the users. These directories may contain files that contain sensitive information. In this example,the file directory is listable which contains the file users.txt from where the password can be obtained. 
+How to enable directory listing of a web server- We have tp use an FTP client (software that transfers file form one computer to another over an internet). Create an empty text document save it with extension .htaccess.
+Now upload this file to the web server. Now edit this text doc as follows
+Options +Indexes
+</dd>
+</dt>
+<dt>
+LEVEL-3
+<dd>
+this was also based on directory listing. In this case we had to list the robots.txt file(it is a file that lists the section that need not be accessed by web crawlers.
+(web crawlers are internet bots which scan through the pages of website to view their content. This is done so that the search engine knows which webpage to display when user inputs something in the search field).
+Now the comment given in the code gives us an idea to look for robots.txt file and fortunately it contains the password.
+</dd>
+</dt>
+<dt>
+LEVEL-4
+<dd>
+In the most common situation this means that when a user clicks a hyperlink in a web browser, the browser sends a request to the server holding the destination webpage. The request includes the referrer field, which indicates the last page the user was on (the one where they clicked the link). This example is based on referrer spoofing.(telling a fake address of your website to the visiting website.) use chrome extension referrer control for this.
+</dd>
+</dt>
+<dt>
+LEVEL-5
+<dd>
+ Change the value of logged in cookie from 0 to 1 from the chrome extension editthiscookie.
+ </dd>
+ </dt>
+ <dt>
+ LEVEL-6
+ <dd>
+ By viewing the sourcecode we see a javascript function that does the password checking. It compares the user input password with a variable. The value of the variable is not given directly. It is included in another file.
+Opening this file gives us the password.
+</dd>
+</dt>
+<dt>
+LEVEL-7
+<dd>
+in the source code a hint is given that the password is contained in the /etc/passwd file. But this file is not contained in the web servers root directory.
+So we need to find a way to reach this file. So we try for local file inclusion vulnerablity by using ../ and then attaching the file. And hopefully it works out.
+</dd>
+</dt>
+</dl>
+</body>
+</html>

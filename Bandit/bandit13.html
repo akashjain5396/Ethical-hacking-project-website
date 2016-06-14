@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	
+	h1 {color: black;
+		text-align: left;
+		margin: 60px;
+		}
+	h2 {
+		text-align: left;
+		margin: 60px
+	}
+	p,pre {
+		margin: 60px;
+		font-size: 20px}	
+	#pi {
+		margin: 60px;
+		padding: 10px;
+		background-color: grey;
+	}
+</style>
+	<title>bandit13</title>
+</head>
+
+<body style="background:lightgrey">
+
+<h1 style="font-size: 225%;">BANDIT: 13</h1>
+<p>You need to know about different types of file compression and hexdump file. You also need to know how to make directories.</p>
+<h2>Commands:</h2>
+<p id="pi">$ mkdir /tmp/myname/</p>
+<p>This will create a directory in /tmp of name myname.</p>
+<p id="pi">$ cp data.txt /tmp/myname/dataNew.txt</p>
+<p>This will copy data.txt from your current directory to /tmp/myname directory.</p>
+<p id="pi">$ xxd -r dataNew.txt > data.txt</p>
+<p>This will convert your hexdump file back to binary file and will store in a new file naming data.txt .</p>
+<p id="pi">$ file data.txt</p>
+<p>This will tell you that the file is gzip compressed.</p>
+<p id="pi">$ zcat data.txt > data1.txt</p>
+<p>It will uncompress it and store it in new file naming data1.txt . Now same procedure is followed according to the type of  file compression.</p>
+<p id="pi">$ file data1.txt<br>
+$ bzcat data1.txt > data2.txt<br>
+$ file data2.txt<br>
+$ zcat data2.txt > data3.txt<br>
+$ file data3.txt<br>
+$ tar -xf data3.txt<br>
+$ file data5.bin<br>
+$ tar -xf data5.bin<br>
+$ file data6.bin<br>
+$ bzcat data6.bin > data5.txt<br>
+$ file data5.txt<br>
+$ tar -xf data5.txt<br>
+$ file data8.bin<br>
+$ zcat data8.bin > data6.txt<br>
+$ file data6.txt</p>
+<p>You will see the file contains ASCII text.</p>
+<p id="pi">$ cat data6.txt</p>
+<p>You will see you password.</p>
+</body>
+</html>
